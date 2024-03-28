@@ -1,0 +1,33 @@
+/* CustomCard.css */
+
+.product-card {
+    margin: 10px;
+    /* Add your default styling here */
+  }
+  
+  .image-wrapper {
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+  
+  .quantity {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 767px) {
+    /* Styles for screens smaller than 767px */
+    .product-card {
+      width: 100%;
+    }
+  
+    .quantity {
+      margin-bottom: 5px;
+    }
+  }
+  
+  /* Add more media queries as needed for different screen sizes */
+  
