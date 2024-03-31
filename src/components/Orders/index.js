@@ -7,16 +7,17 @@ const getDateTime = (string) => {
   const date = fullDate.toLocaleDateString();
   const time = fullDate.toLocaleTimeString();
   return `${date} - ${time}`;
+  
 };
 
 const Orders = ({ orders }) => {
 
-    console.log("this is orders",orders);
+  console.log("this is orders",orders);
     
   return (
 
     <Container>
-    <div className="orders">
+    <div className="orders" style={{marginTop:"90px"}}>
       {orders.length ? (
         <>
           <h2>Your orders:</h2>

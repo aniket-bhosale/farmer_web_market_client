@@ -16,7 +16,7 @@ const useOrders = (token) => {
           },
         });
 
-        console.log({data});
+        console.log("orders",{data});
         
         setIsNewOrdersAdded(false);
         setOrders(data.reverse());

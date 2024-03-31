@@ -100,7 +100,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <Row>
+    <Row style={{marginTop:"100px"}}>
       <Col sm="12" md={{ size: 4, offset: 4 }}>
         <div>
           <h2>Forgot Password:</h2>

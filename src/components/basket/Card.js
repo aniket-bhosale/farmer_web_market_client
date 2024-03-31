@@ -21,6 +21,7 @@ const CustomCard = ({
   id,
   name,
   price,
+  city,
 //   color,
 //   size,
 //   sizes,
@@ -36,7 +37,7 @@ const CustomCard = ({
 }) => {
   const quantitiesArray = Array.from(Array(Number(quantities || 0)).keys());
 
-  // console.log("card",imageUrl);
+  console.log("card",city);
 
   return (
     <Container>

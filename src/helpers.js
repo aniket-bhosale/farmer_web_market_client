@@ -21,6 +21,9 @@ export const Protector = ({ Component }) => {
 
   const { jwt } = userData();
 
+  // const user = user;
+  // console.log("user",user);
+
   useEffect(() => {
     if (!jwt) {
       navigate("/login");
