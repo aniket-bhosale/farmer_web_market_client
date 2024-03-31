@@ -23,16 +23,20 @@ import useOrders from "./components/Orders/useOrders";
 // import Double from "./components/Double";
 
 import { Container } from "reactstrap";
+import Farmer from "./components/Farmer";
+import Profile from "./components/Profile";
+
+
 
 function App() {
 
-  const { jwt, username } = userData();
+  const { jwt, username,city } = userData();
   const isLoggedIn = !!jwt;
   const { orders, setIsNewOrdersAdded } = useOrders(jwt);
   const { basket , addToBasket, removeFromBasket,updateBasketItem} = useBasket(jwt,
     setIsNewOrdersAdded);
 
-  // console.log(jwt);
+  // console.log("users",userData);
   // const isLoggedIn = !!jwt;
 
   return (
@@ -73,6 +77,12 @@ function App() {
 
 
             <Route
+              path="/profile"
+              element={<Protector Component={<Profile token={jwt} />} />}
+            />
+
+
+            <Route
               path="/basket"
               element={
                 <Basket
@@ -85,7 +95,7 @@ function App() {
 
 
 
-
+            <Route path="/farmer" element={<Farmer token={jwt} orders={orders} city={city} />} />
             {/* <Route path="/basket" element={<Basket/>} /> */}
 
           </Routes>

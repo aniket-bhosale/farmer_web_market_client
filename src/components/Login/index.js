@@ -11,6 +11,9 @@ const Login = () => {
   const [user, setUser] = useState(initialUser);
   const navigate = useNavigate();
 
+  const [activeButton, setActiveButton] = useState(null);
+
+
   const handleChange = ({ target }) => {
     const { name, value } = target;
     setUser((currentUser) => ({
@@ -55,7 +58,16 @@ const Login = () => {
             hideProgressBar: true,
           });
           setUser(initialUser);
-          navigate("/");
+
+
+
+          if (activeButton === "farmer") {
+            navigate("/farmer");
+          } else {
+            navigate("/");
+          }
+
+          
           window.location.reload();
         }
       }
@@ -107,6 +119,30 @@ const Login = () => {
       <Col sm="12" md={{ size: 4, offset: 4 }}>
         <div>
           <h2>Login:</h2>
+
+
+
+          <div style={{ display: "flex", gap:"10px", marginBottom: "10px" }}>
+
+              <Button
+                color={activeButton === "customer" ? "success" : "primary"}
+                onClick={() => setActiveButton("customer")}
+                className="login-button"
+              >
+                Customer
+              </Button>
+              <Button
+                color={activeButton === "farmer" ? "success" : "primary"}
+                onClick={() => setActiveButton("farmer")}
+                className="login-button"
+              >
+                Farmer
+              </Button>
+            </div>
+
+
+
+
           <FormGroup>
             <Input
               type="email"

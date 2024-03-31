@@ -29,8 +29,11 @@ const Checkout = ({ products, token }) => {
     } catch (err) {
       console.log(err);
     }
+
+    console.log("this checkout" ,products);
   };
 
+  
   return (
     <Button color="info" onClick={handlePayment}>
       Checkout

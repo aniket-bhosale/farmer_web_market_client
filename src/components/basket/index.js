@@ -14,6 +14,8 @@ import Checkout from "../checkout";
 const Basket = ({basket ,removeFromBasket, updateBasketItem}) =>{
   const navigate = useNavigate();
 
+  console.log("basket", basket);
+
     // const image = basket.attributes.images.data[0].attributes.url;
 
     const navigateToProductView = (url) => {
